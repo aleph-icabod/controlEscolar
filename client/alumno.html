@@ -1,0 +1,86 @@
+<template name="alumnoBody">
+	<div class="container-fluid page body">
+	 {{> navbarAlumno}}
+	 <article>
+    <div class="row">
+      <div class="col-md-10 col-xs-12 col-md-offset-1">
+        <h2 class="h2">Alumno</h2>                    
+          <div class="row">
+            <h3 class="h3">Bienvenido {{profile.nombreUsuario}}</h3>
+            <h4 class="h4">Desde aquí puedes visualizar tus cursos y las calificaciones en ellos</h4>
+          </div>
+        </div>
+      </div>
+    </article>
+	</div>
+</template>
+
+<template name="navbarAlumno">
+	<nav class="navbar navbar-default" id="menuAlumno"> 
+    <div class="navbar-header">            
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuAlu" aria-expanded="false">              
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>              
+      </button>"
+      <a class="navbar-brand" href="{{pathFor 'alumno'}}">P-G</a>
+    </div>  
+    <div class="navbar-collapse" id="menuAlu">
+      <ul class="nav navbar-nav navbar-left">            
+        <li ><a href="{{pathFor 'cursosdealumno'}}">Cursos </a></li>              
+      </ul>            
+      <form class="navbar-form navbar-right">
+        <button type="button" class="btn btn-warning salir">Salir</button>
+      </form>
+    </div>
+  </nav>     
+</template>
+
+<template name="cursos">
+	<div class="container-fluid page body">
+		{{> navbarAlumno}}
+		<div class="col-md-10 col-md-offset-1 col-xs-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+      <h2 class="h2">Cursos a los que esta inscrito</h2>  
+      </div>
+    
+		  
+			<form>
+			  <div class="form-group row">              
+          <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
+            <label >Cursos </label>                
+            <select class="form-control" id="cursosTomados">
+                <option></option>
+              {{#each cursos}}
+						    <option value="{{curso}}">{{materia}}</option>		
+              {{/each}}
+            </select>                
+          </div>
+        </div>
+			 <div class="form-group row">
+				  <div class="col-md-3 col-md-offset-3 col-xs-10 col-xs-offset-1">
+					   <label for="maestro">Maestro</label>
+					   <input type="text" class="form-control" id="maestro" disabled
+              value="{{nombreMaestro}}"
+             >						
+				  </div>
+			    <div class="col-md-3 col-md-offset-0 col-xs-10 col-xs-offset-1">
+					   <label for="hora">Hora</label>
+					   <input type="text" class="form-control" id="hora" disabled
+             value="{{horario}}">						
+				  </div>
+			 </div>	
+			 <div class="form-group row">
+				<div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
+					<label for="calificacion">Calificación</label>
+					<input type="text" class="form-control" id="calificacion" disabled
+          value="{{calificacion}}">						
+			 	</div>				
+			 </div>	
+		  </form>
+      </div>
+	  </div>
+  </div>
+</template>
+

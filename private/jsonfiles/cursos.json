@@ -1,0 +1,10 @@
+[{"numCurso":1001,"materia":"Meevee","area":"ciencias","maestro":null,"nivel":"universidad","cupo":10,"cupoDisponible":10,"horaInicio":"9:38 AM","horafin":"11:15 PM","costo":"222.8"},
+{"numCurso":1002,"materia":"Zoombeat","area":"ingles","maestro":null,"nivel":"bachillerato","cupo":10,"cupoDisponible":10,"horaInicio":"9:43 AM","horafin":"11:49 AM","costo":"362.0"},
+{"numCurso":1003,"materia":"Skiba","area":"ciencias","maestro":null,"nivel":"universidad","cupo":10,"cupoDisponible":10,"horaInicio":"1:44 AM","horafin":"1:56 AM","costo":"327.37"},
+{"numCurso":1004,"materia":"Lazzy","area":"matematicas","maestro":null,"nivel":"primaria","cupo":10,"cupoDisponible":10,"horaInicio":"4:05 PM","horafin":"5:31 PM","costo":"201.93"},
+{"numCurso":1005,"materia":"Photolist","area":"matematicas","maestro":null,"nivel":"universidad","cupo":10,"cupoDisponible":10,"horaInicio":"4:53 PM","horafin":"8:29 AM","costo":"397.47"},
+{"numCurso":1006,"materia":"Twinte","area":"ciencias","maestro":null,"nivel":"bachillerato","cupo":10,"cupoDisponible":10,"horaInicio":"2:30 PM","horafin":"7:22 AM","costo":"203.68"},
+{"numCurso":1007,"materia":"Latz","area":"ciencias","maestro":null,"nivel":"bachillerato","cupo":10,"cupoDisponible":10,"horaInicio":"11:27 AM","horafin":"12:20 PM","costo":"284.42"},
+{"numCurso":1008,"materia":"Photobug","area":"matematicas","maestro":null,"nivel":"universidad","cupo":10,"cupoDisponible":10,"horaInicio":"1:31 PM","horafin":"8:16 AM","costo":"377.81"},
+{"numCurso":1009,"materia":"Jazzy","area":"matematicas","maestro":null,"nivel":"secundaria","cupo":10,"cupoDisponible":10,"horaInicio":"2:12 PM","horafin":"11:19 AM","costo":"218.05"},
+{"numCurso":1010,"materia":"Yodo","area":"ciencias","maestro":null,"nivel":"secundaria","cupo":10,"cupoDisponible":10,"horaInicio":"1:56 PM","horafin":"6:45 PM","costo":"323.79"}]

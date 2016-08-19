@@ -1,0 +1,55 @@
+<template name="estadisticas">
+	<div class="container-fluid page body">
+		{{> navbarsecre}}	
+		<h1 class="h1 info">{{titulo}}</h1>
+		<div class="row">
+		<div class="col-md-2  col-xs-12">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="h3 info">Estadísticas</h3>				
+			</div>
+			<div class="panel-body">
+				<select id="estadisticas" class="form-control">
+					<option></option>
+					<option value="1">Cursos disponibles por área</option>
+					<option value="2">Alumnos por sexo</option>
+					<option value="3">Alumnos inscritos por área</option>
+					<option value="4">Ingresos por cursos</option>
+				</select>
+				<button class="btn btn-success graficar">Generar Gráfica</button>
+			</div>				
+			</div>
+		</div>
+		<div class="col-md-9  col-xs-12 contieneGrafica">
+		<div class="grafica">			
+		</div>
+		</div>
+		<div class="col-md-9 col-md-offset-2 col-xs-12">
+		{{#if mostrar}}
+			<div class="panel panel-primary">
+				<div class="row">
+						
+						<div class="panel-heading"> <h2 class="h2">Informe</h2>
+						</div>
+						<div class="panel-body"> 
+					<div class="col-md-5 col-md-offset-1 col-xs-6">
+						<h3 class="h3">{{colum1}}</h3>
+						{{#each informes}}
+							<p class="texto">{{label}} </p>
+						{{/each}}							
+					</div>
+					<div class="col-md-5 col-xs-6">
+						<h3 class="h3">{{colum2}}</h3>
+						{{#each informes}}
+							<p class="textoDato texto">{{dato}} </p>
+						{{/each}}							
+					</div>
+					</div>					
+				</div>				
+			</div>	
+			{{/if}}
+				
+		</div>		
+		</div>
+	</div>
+</template>

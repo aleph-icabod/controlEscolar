@@ -1,0 +1,292 @@
+<template name="encabezadoAdmin">
+	<div class="container-fluid ">
+		<nav class="row">
+			<img src="logo.png" alt="logo">
+			<h2 class="h2">Administración de usuarios</h2>
+		</nav>
+
+	</div>
+</template>
+<template name="admin">
+	<div class="container-fluid  body">
+		{{> menuAdmin}}
+		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-2">
+			<article>
+				<h1 class="h1">Bienvenido</h1>
+				<h2 class="h2">{{profile.nombreUsuario}}</h2>
+				<br>
+				<br>
+				<h4 class="h4">Administración de usuarios y publicaciones</h4>
+			</article>
+		</div>
+	</div>
+</template>
+
+<template name="menuAdmin">
+	<nav class="navbar navbar-default" id="menuPag">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuAdmini" aria-expanded="false">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>"
+			<a class="navbar-brand" href="{{pathFor 'administrar'}}">Admin P-G</a>
+		</div>
+		<div class="navbar-collapse" id="menuAdmini">
+			<ul class="nav navbar-nav navbar-left">
+				<li class="dropdown">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestión de usuarios <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="{{pathFor route='nuevoUsuario'}}">Agregar usuario</a></li>
+						<li><a href="{{pathFor route='cambioContraseña'}}">Editar usuario</a></li>
+						<li><a href="{{pathFor route='borrarUsuario'}}">Eliminar usuario</a></li>
+					</ul>
+				</li>
+				<!-- <li ><a href="{{pathFor route='publicaciones'}}"></a></li>            -->
+			</ul>
+			<form class="navbar-form navbar-right">
+				<button type="button" class="btn btn-warning salir">Salir</button>
+			</form>
+		</div>
+	</nav>
+</template>
+
+
+<template name="usuarioNuevo">
+	<div class="container-fluid body">
+		{{> menuAdmin}}
+		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-2">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h2 class="h2">Usuario nuevo</h2>
+				</div>
+				<form id="usuarioNuevo">
+					<div class="form-group row">
+						<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+							<div class="row">
+								<div class="col-md-4 col-xs-12">
+									<label for="nombre">Nombre </label>
+									<input type="text" class="form-control" placeholder="Nombre" id="nombre" required>
+								</div>
+								<div class="col-md-4 col-xs-12">
+									<label for="apPat">Apellido Paterno </label>
+									<input type="text" class="form-control" placeholder="Apellido" id="apPat" required>
+								</div>
+								<div class="col-md-4 col-xs-12">
+									<label for="apMat">Apellido Materno </label>
+									<input type="text" class="form-control" placeholder="Apellido" id="apMat">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+							<div class="row">
+								<div class="col-md-6 col-xs-12">
+									<label for="usuario">Nombre de usuario</label>
+									<input type="text" class="form-control" placeholder="Nombre" id="usuario" required>
+								</div>
+								<div class="col-md-6 col-xs-12">
+									<label for="pass">Contraseña </label>
+									<input type="password" class="form-control" placeholder="password" id="pass" required>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+							<div class="row">
+								<div class="col-md-6 col-xs-12">
+									<label for="pass2">Confirmar Contraseña </label>
+									<input type="password" class="form-control" placeholder="Confirmar password" id="pass2" required>
+								</div>
+								<div class="col-md-6 col-xs-12">
+									<label>Tipo de usuario</label>
+									<div class="radio">
+										<label class="radio-inline">
+											<input type="radio" name="tipo" id="administrador" value="admin">Administrador
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="tipo" id="secre" value="secretaria">Coordinador
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-offset-5 col-xs-offset-6">
+						<button type="submit" class="btn btn-success">Agregar</button>
+						<button type="button" class="btn btn-danger " id="cancelar">Cancelar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="editarUsuario">
+	<div class="container-fluid body">
+		{{> menuAdmin}}
+		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-2">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h2 class="h2">Editar Usuario</h2>
+				</div>
+				<form id="editarUsuario">
+					<div class="form-group row">
+						<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+							<div class="row">
+								<div class="col-md-12  col-xs-12 ">
+									<label for="usu">Nombre de usuario</label>
+									<select class="form-control" id="usu">
+										<option></option>
+										{{#each usuarios}}
+										<option value="{{username}}">{{profile.nombreUsuario}}</option>
+										{{/each}}
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+							<div class="row">
+								<div class="col-md-4 col-xs-12">
+									<label for="nombre">Nombre </label>
+									<input type="text" class="form-control" placeholder="Nombre" id="nombre" required>
+								</div>
+								<div class="col-md-4 col-xs-12">
+									<label for="apPat">Apellido Paterno </label>
+									<input type="text" class="form-control" placeholder="Apellido" id="apPat" required>
+								</div>
+								<div class="col-md-4 col-xs-12">
+									<label for="apMat">Apellido Materno </label>
+									<input type="text" class="form-control" placeholder="Apellido" id="apMat">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+							<div class="row">
+								<div class="col-md-6 col-xs-12">
+									<label for="usuario">Nombre de usuario</label>
+									<input type="text" class="form-control" placeholder="Nombre" id="usuario" required>
+								</div>
+								<div class="col-md-6 col-xs-12">
+									<label for="pass">Contraseña </label>
+									<input type="password" class="form-control" placeholder="password" id="pass" required>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+							<div class="row">
+								<div class="col-md-6 col-xs-12">
+									<label for="pass2">Confirmar Contraseña </label>
+									<input type="password" class="form-control" placeholder="Confirmar password" id="pass2" required>
+								</div>
+								<div class="col-md-6 col-xs-12">
+									<label>Tipo de usuario</label>
+									<div class="radio">
+										<label class="radio-inline">
+											<input type="radio" name="tipo" id="administrador" value="admin">Administrador
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="tipo" id="secre" value="secretaria">Secretaria
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-offset-5 col-xs-offset-6">
+						<button type="submit" class="btn btn-success">Editar</button>
+						<button type="button" class="btn btn-danger " id="cancelar">Cancelar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="eliminarUsuario">
+	<div class="container-fluid body">
+		{{> menuAdmin}}
+		<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-2">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h2 class="h2">Eliminar Usuario</h2>
+				</div>
+				<form id="eliminarUsuario">
+					<div class="form-group row">
+						<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+							<div class="row">
+								<div class="col-md-12 col-xs-12 ">
+									<label for="usu">Nombre de usuario</label>
+									<select class="form-control" id="usu">
+										<option></option>
+										{{#each usuarios}}
+										<option value="{{username}}">{{profile.nombreUsuario}}</option>
+										{{/each}}
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+							<div class="row">
+								<div class="col-md-4 col-xs-12">
+									<label for="nombre">Nombre </label>
+									<input type="text" class="form-control" placeholder="Nombre" id="nombre" disabled>
+								</div>
+								<div class="col-md-4 col-xs-12">
+									<label for="apPat">Apellido Paterno </label>
+									<input type="text" class="form-control" placeholder="Apellido" id="apPat" disabled>
+								</div>
+								<div class="col-md-4 col-xs-12">
+									<label for="apMat">Apellido Materno </label>
+									<input type="text" class="form-control" placeholder="Apellido" id="apMat" disabled>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+							<div class="row">
+								<div class="col-md-6 col-xs-12">
+									<label for="usuario">Nombre de usuario</label>
+									<input type="text" class="form-control" placeholder="Nombre" id="usuario" disabled>
+								</div>
+								<div class="col-md-6 col-xs-12">
+									<label>Tipo de usuario</label>
+									<div class="radio">
+										<label class="radio-inline">
+											<input type="radio" name="tipo" id="administrador" value="admin" disabled>Administrador
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="tipo" id="secre" value="secretaria" disabled>Secretaria
+										</label>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-offset-5 col-xs-offset-6">
+						<button type="submit" class="btn btn-success">Eliminar</button>
+						<button type="button" class="btn btn-danger " id="cancelar">Cancelar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="AdministrarBlog">
+	<div class="container-fluid ">
+		{{> menuAdmin}} {{> blogAdmin}}
+	</div>
+</template>

@@ -1,0 +1,10 @@
+
+{
+  "galaxy.meteor.com": { 
+     "env": { 
+       "ROOT_URL": "http://www.pedrodegante.meteorapp.com", 
+       "MONGO_URL":  "mongodb://pedrodegante:icabod123@ds059135.mlab.com:59135/pedrodegante"
+ 
+     } 
+   }
+}

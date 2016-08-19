@@ -1,0 +1,210 @@
+/* CSS declarations go here */
+
+nav{
+	background-color: rgb(0,168,187);
+	color:#FFF;
+	text-align: center;
+	vertical-align: middle;				
+}
+
+.nav a{
+	font-weight: bold;
+}
+
+nav img{	
+	width:8em;
+	margin-top:8px;
+	margin-bottom: 8px;	
+}
+
+nav h2{
+	font-size: 2.5em;	
+	display: inline-block;	
+}
+
+body,.body{	
+	background-color: #FDDD94;
+}
+
+#menuMaestro,#menuAlumno{
+	padding-top: -3em;
+}
+article{
+	text-align: center;
+	min-height: 800px;
+}
+h1,h2,h3,h4,h5{
+	text-align: center;
+	font-family: 'Montserrat', serif !important;
+}
+table thead{
+	text-align: center;
+}
+
+
+form{
+	padding-top:2em;
+	padding-bottom:1.1em;	
+	transition: width 4s;
+	
+}
+
+.panel{
+	margin-top: 3.5em;
+}
+.panel,.panel-primary,.panel-primary .panel-heading{	
+	border-radius:14px 14px 0 0;
+}
+.panel-primary .panel-heading{
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.panel-primary .panel-heading{
+background-color: rgb(0,168,187);
+}
+.ingresar input{
+	margin-top:10px;
+}
+
+.ingresar{
+	text-align: right;	
+}
+#rfc{
+	text-transform: uppercase;
+}
+
+
+.list-group-item h4,h5{
+	display: inline-block;
+	text-align: left;
+	margin-bottom: 1px;
+}
+.list-group-item span{
+	float: right;
+}
+
+.info{
+	margin-bottom: 4px;
+}
+
+h2.info{
+margin-bottom: 4px;
+text-align: center;
+font-size: 1.4em;
+}
+h3.info,h1.info{
+	margin-bottom: 1em !important;
+}
+.panel-body{
+	background-color:#BEE4FF;
+}
+
+.titInfo{
+	font-size: 1.3em;
+}
+
+.graficar{
+	margin-top:5px;
+}
+
+
+
+svg{
+	border:1px solid green;
+	background-color: #C5D9FF;
+}
+
+path.slice{
+	stroke-width:2px;
+}
+
+polyline{
+	opacity: .3;
+	stroke: black;
+	stroke-width: 2px;
+	fill: none;}
+
+.bar {
+  fill: #045889;
+}
+.bar2{
+	fill:#AD2BFF;
+}
+.bar3{
+	fill:#1C8957;
+}
+
+.title {
+  font: bolder 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering:geometricPrecision;
+}
+
+.eti{
+	font-size: 16px;
+	fill:#FFF;
+}
+
+.foto{
+	width: 15em;
+	height: 15em;
+	vertical-align: middle;
+	float:left;
+	margin-left: 8em;
+	margin-right: 2em;
+	display: inline-block;
+}
+
+p.texto{
+	text-align: justify;
+	font-size: 1.2em;
+	padding-top: 2em;
+	padding-left: 6em;
+	padding-right: 4em;
+	font-family: 'Lato', sans-serif;
+	
+}
+
+.row article{
+	background-color:rgb(255, 232, 180);
+	margin-top: 2.5em;
+	padding-top:1.5em; 
+	min-height: 720px;
+	-webkit-box-shadow: -7px -5px 55px 5px rgba(0,0,0,0.38);
+	-moz-box-shadow: -7px -5px 55px 5px rgba(0,0,0,0.38);
+	box-shadow: -7px -5px 55px 5px rgba(0,0,0,0.38);
+	
+}
+
+.jumbotron{
+	background-color:rgb(255, 232, 180);
+}
+
+.page{
+  position: relative;
+  width: 100%;
+}
+
+.incorrect{
+	border:2px solid red;	
+}
+
+.texto.textoDato{
+	text-align: center !important;
+}
+
+.mapa{
+	width: 100%;
+	height: 450px;
+}
+
+.filtro{
+	margin-bottom: 1.2em;
+}

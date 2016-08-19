@@ -1,0 +1,116 @@
+<template name="pagina">
+	<div class="container-fluid page">		
+    <div class="row">
+      <article class="col-md-10 col-md-offset-1 col-xs-12 ">
+			<h1>Colegio de Asesorías Pedro de Gante</h1>
+      <br><br>
+      <div class="col-md-12  col-xs-12">
+      
+      <img src="foto1.jpg" alt="Alumnos estudiando" class="foto"> 
+      <p class="texto">
+        El colegio “Pedro de Gante” es una escuela 100% Oaxaqueña que cuenta con 
+        una trayectoria de mas de 20 años proporcionando asesoría a estudiantes de diferentes niveles académicos en el estado. 
+      </p>
+      <br>
+      <h3 class="h3 sub"> <i> "...cada semana les enseño a uno por uno..." </i> 
+      <br>Fray Pedro de Gante.</h3>
+      <p class="texto">
+        Nos especializamos en asesorar a alumnos con problemas de matemáticas, ingles y ciencias, proporcionando
+        a cada estudiante atención personalizada para superar cualquier dificultad en su vida académica.</p>
+        <p class="texto">
+        Tenemos cursos disponibles para alumnos de primaria, secundaria y bachillerato a precios accesibles 
+        y en múltiples horarios, acercate a nosotros y dile adiós a tus dificultades escolares. 
+      </p>      
+			</div>
+      </article>
+
+		</div>
+	</div>
+  
+</template>
+
+<template name="encabezadoPagina">
+	<div class="container-fluid">
+		<nav class="row">			   
+      <img  src="logo.png" alt="logo">            
+      <h2 class="h2">Colegio de asesorías Pedro de Gante</h2>                              
+  	</nav> 
+  	{{> menuPagina}} 
+</div>
+</template>
+
+<template name="menuPagina">
+		<nav class="navbar navbar-default" id="menuPag"> 
+    <div class="navbar-header">            
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuPagina" aria-expanded="false">              
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>              
+      </button>"
+      <a class="navbar-brand" href="/">Inicio</a>
+    </div>  
+    <div class="navbar-collapse" id="menuPagina">
+      <ul class="nav navbar-nav navbar-left">            
+        <li ><a href="/nosotros">Nosotros</a></li>              
+        <li ><a href="/Contacto">Contacto</a></li>
+        <li ><a href="{{pathFor 'entrada'}}">Sistema</a></li>
+      </ul> 
+        </div>
+  </nav> 
+</template>
+
+<template name="contacto">
+  <div class="container-fluid page">
+     <div class="row algo">
+    <article class="col-md-10 col-md-offset-1 col-xs-12">
+      <h1 class="h1">Contactanos</h1>
+      <br><br>
+      <div class="col-md-6  col-xs-12">
+            <div class="jumbotron">
+              <h2 class="display-3">Nuestra dirección</h2>
+              <p class="lead">Calle Violetas 218 de la colonia Reforma, en la ciudad de Oaxaca.</p>
+              <hr class="m-y-md">
+              <p>Visitanos cualquier día de la semana 
+                en un horario de 7 de la mañana a 7 de la noche</p>              
+            </div>
+
+      </div>
+      <div class="col-md-6 col-xs-12">
+      <div class="mapa ">
+          {{#unless geolocationError}}
+          {{> googleMap name="map" options=mapOptions}}
+        {{else}}
+            Geolocation failed: {{geolocationError}}
+        {{/unless}}
+        </div>
+       
+      </div>
+      </article>
+  </div>
+  </div>
+</template>
+
+<template name="nosotros">
+  <div class="container-fluid page">
+  <div class="row">
+    <article class="col-md-10 col-md-offset-1 col-xs-12">
+      
+      <br><br>
+      <div class="col-md-12  col-xs-12">
+      <h2 class="h2">Nuestra Misión</h2>      
+      <p class="texto">
+        Proporcionar a los estudiantes las herramientas necesarias para superar cualquiera problema académico y mejorar sus habilidades cognitivas para un mayor aprovechamiento escolar. 
+      </p>
+      <br>
+      <h2 class="h2">Nuestra Visión </h2>
+      <p class="texto">
+        Ser en Oaxaca una institución líder en educación personalizada, especializada en matemáticas que ayude a los estudiantes a superarse en su vida académica.</p>
+       <br>
+       <h2 class="h2">Objetivo</h2>     
+       <p class="texto">
+         Proporcionar ayuda de manera personalizada a estudiantes de cualquier nivel educativo a superar sus dificultades académicas proporcionando las herramientas necesarias para un mejor desarrollo cognitivo.  
+       </p>
+      </div>
+      </article>
+  </div></div>
+</template>
